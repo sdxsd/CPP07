@@ -1,6 +1,5 @@
 #ifndef ARRAY_H
 #define ARRAY_H
-#define NULL 0
 
 #include <stdexcept>
 
@@ -38,8 +37,10 @@ template <typename T> class Array {
 			return (*this);
 		}
 		T &operator[](const unsigned int& index) {
-			if (index < 0 || index > this->length)
+			if (index > this->length)
 				throw std::out_of_range("Index out of range.");
+			else
+				return (elements[index]);
 		}
 		// Methods:
 		unsigned int	size(void) {

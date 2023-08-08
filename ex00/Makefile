@@ -2,7 +2,6 @@ NAME = whatever
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++11
 FILES = \
-		whatever.cpp \
 		main.cpp
 OFILES = $(FILES:.cpp=.o)
 

@@ -2,6 +2,8 @@
 #define ARRAY_H
 #define NULL 0
 
+#include <stdexcept>
+
 template <typename T> class Array {
 	private:
 		T*				elements;
@@ -37,7 +39,7 @@ template <typename T> class Array {
 		}
 		T &operator[](const unsigned int& index) {
 			if (index < 0 || index > this->length)
-				;
+				throw std::out_of_range("Index out of range.");
 		}
 		// Methods:
 		unsigned int	size(void) {
